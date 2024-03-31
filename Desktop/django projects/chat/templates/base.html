@@ -1,0 +1,64 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+
+    <style>
+        .den{
+            
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            
+        }
+        .den a{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    {%block body%}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Dential</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#minMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ml-auto">
+                    {%if user.is_authenticated%}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Wellcome {{user.username}}</a>
+                    </li>
+                    
+                    <li>
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success">Logout</button>
+                            {%if user.username == 'mohamed'%}
+                            <a href="{% url 'adddentist'%}" class="btn btn-success">Add dentist</a>
+                            {%endif%}
+                        </form>
+                        
+                    </li>
+                    {%else%}
+                    <li>
+                        <a href="{% url 'signup'%}" class="btn btn-success">signup</a>
+                        <a href="{% url 'login'%}" class="btn btn-success">login</a>
+                        
+                    </li>
+                    {%endif%}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {%block contant%}
+    {%endblock%}
+    {%endblock%}
+    
+</body>
+</html>

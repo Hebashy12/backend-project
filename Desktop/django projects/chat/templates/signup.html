@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container">
+    <h1>sign up</h1>
+    <form method="post" novalidate>
+        {%csrf_token%}
+        {%include 'includes/form.html'%}
+        <button type="submit" class="btn btn-primary">sign up</button>
+    </form>
+
+</div>
+{%endblock%}
+
