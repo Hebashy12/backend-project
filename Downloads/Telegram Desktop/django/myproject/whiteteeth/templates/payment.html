@@ -1,0 +1,296 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <script src="css/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <style>
+        :root {
+            --colorstand: #124562;
+        }
+
+        body {
+            font-family: 'Roboto';
+        }
+
+        .section-payment {
+            margin-top: 120px;
+        }
+        .pay-cards img{
+            margin-right: 30px;
+        }
+
+        /**/
+        .payinfo-section img{
+            width: 100px;
+        }
+        .btn-sub{
+            background-color: var(--colorstand);
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light ">
+        <div class="container">
+            <!-- Logo on the left -->
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'imgs/logo.png' %}" alt="" class="img-fluid" width="32%">
+            </a>
+
+            <!-- Toggler button for small screens -->
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <!-- Navigation links on the right -->
+            <div class="collapse navbar-collapse justify-content-end " id="collapsibleNavId">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'index' %}" aria-current="page">
+                            <!-- active -->
+                            Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'ourTeam' %}">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactUs' %}">Contact Us</a>
+                    </li>
+                    {%if user.is_authenticated%}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {%else%}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+                    {%endif%}
+                    <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end nav -->
+
+
+
+
+    <main>
+
+
+        <section class=" section-payment">
+            <div class="mt-5 d-flex justify-content-center">
+                <h1 class="fw-bold">Add Payment</h1>
+            </div>
+            <div>
+                <div class="pay-cards d-flex justify-content-center mt-4">
+                    <img src="{% static 'imgs/visa1.png' %}" alt="" width="60px" height="30px">
+                    <img src="{% static 'imgs/visa2.png' %}" alt="" width="60px" >
+                    <img src="{% static 'imgs/visa3.png' %}" alt="" width="60px">
+                    
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <section class="payinfo-section mt-5 container p-5">
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <img src="{% static 'imgs/credit-card-scan-5788863-4842631.webp' %}" alt="">
+                    <span class="fw-bold">Scan Card</span>
+                </div>
+                
+            </div>
+
+            <!--  -->
+
+            
+                <form action="" method="">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="" class="form-label">Name On Card</label>
+                        <input type="text" name="" class="form-control" placeholder="Name on Card">
+
+                        </div>
+                        
+                        
+                        
+                    </div>
+
+                    <!--  -->
+                    <div class="row mt-5">
+                        <div class="col-lg-6">
+                            <label for="" class="form-label">Card Number</label>
+                        <input type="text" name="" class="form-control" placeholder="XXXX-XXXX-XXXX-XXX">
+
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-lg-2">
+                            <label for="" class="form-label">Expiry Date</label>
+                        <input type="text" name="" class="form-control" placeholder="--/--">
+
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="" class="form-label">CVV</label>
+                        <input type="text" name="" class="form-control" placeholder="xxx">
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-lg-4">
+                            <label for="" class="form-label">ZIP/Postal Code</label>
+                        <input type="text" name="" class="form-control" placeholder="">
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-sub" data-bs-toggle="modal" data-bs-target="#myModal">Submit</button>
+                            <!-- modal -->
+                            <!-- The Modal -->
+<div class="modal fade mt-5" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Payment Confirmaation</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body display-6">
+         Process Confirmed Successfully 
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+                           
+
+                        </div>
+                        
+                    </div>
+                </form>
+            
+        </section>
+        <!--  -->
+
+
+        <section class="mapp mt-5">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54477.9243032329!2d31.763607144297435!3d31.41770020991767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f9e55ffce10e15%3A0x99ae0f78405c14d2!2sDamietta%2C%20Qism%20Damietta%2C%20Damietta%20Desert%2C%20Damietta%20Governorate!5e0!3m2!1sen!2seg!4v1715734671023!5m2!1sen!2seg"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <!-- end section map -->
+
+
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 pt-4">
+                    <h6>Navioation</h6>
+                    <li class="text-white-50">Home</li>
+                    <li class="text-white-50">About us</li>
+                    <li class="text-white-50">Services</li>
+                    <li class="text-white-50">Our Team</li>
+                </div>
+                <div class="col-lg-3 col-md-6 pt-4">
+                    <h6>Services</h6>
+                    <li class="text-white-50">Periodontal Surgery</li>
+                    <li class="text-white-50">Payment note</li>
+                    <li class="text-white-50">Orthodontic</li>
+                    <li class="text-white-50">Contact Us</li>
+
+                </div>
+                <div class="col-lg-3 col-md-6 pt-4">
+                    <h6>Contact Us</h6>
+                    <li class="text-white-50">Demaiye 61 street</li>
+                    <li class="text-white-50">Clinic@gmail.com</li>
+                    <!-- <li class="text-white-50">Orthodontic</li>
+                <li class="text-white-50">Contact Us</li> -->
+
+                </div>
+                <div class="col-lg-3 col-md-12 pt-4">
+                    <h2 class="fw-bold" style="font-family: 'Courier New', Courier, monospace;">White Teeth</h2>
+                    <div class="mt-5">
+                        <i class="fa-brands fa-square-facebook me-4 ms-4"></i>
+                        <i class="fa-brands fa-twitter me-4"></i>
+                        <i class="fa-brands fa-youtube me-4"></i>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- end footer -->
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

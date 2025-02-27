@@ -1,0 +1,41 @@
+:root{
+    --colorstand: #124562;
+}
+body{
+    font-family: 'Roboto';
+    color: var(--colorstand);
+}
+.book-section{
+    margin-top: 120px;
+}
+.book-section .div1{
+    background-color: rgb(209, 216, 223);
+    padding: 20px;
+    width: 40% !important;
+    
+}
+@media (max-width:990px) {
+    .book-section .div1{
+        width: 100% !important;
+    }
+    
+}
+.book-section .div1 a{
+    padding: 20px !important;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--colorstand);
+
+}
+
+.dental p{
+    font-size: 20px;
+}
+.get-btn{
+    color: white;
+    background-color: var(--colorstand);
+    font-weight: bold;
+    padding: 2px 15px;
+    font-size: 18px;
+}

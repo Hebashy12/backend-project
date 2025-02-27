@@ -1,0 +1,40 @@
+:root{
+    --colorstand: #124562;
+}
+body{
+    font-family: 'Roboto';
+    color: var(--colorstand);
+}
+
+.section-contact{
+    margin-top: 150px !important;
+}
+.contact{
+    border:solid 4px var(--colorstand);
+   
+}
+.contact-form{
+    margin: 0px 200px;
+}
+@media (max-width:990px) {
+    .contact-form{
+        margin: 0px 5px;
+    }
+    
+}
+
+label{
+    color: var(--colorstand);
+}
+input[type="text"] ,select ,textarea , .form-check-input
+{
+    border: solid 2px var(--colorstand) !important;
+}
+option{
+    color: gray;
+}
+.btn-sub{
+    background-color: #124562;
+    color: white;
+    padding: 10px 40px;
+}

@@ -1,0 +1,39 @@
+
+$(document).ready(function(){
+    $('#lin1').click(function(){
+        $('.edit-profile').show();
+        $('.edit-schadule').hide();
+        $('.edit-appoint').hide();
+        $('.show-upload-div').hide();
+        $('.profile-div').hide();
+    })
+})
+
+$(document).ready(function(){
+    $('#lin2').click(function(){
+        $('.edit-profile').hide();
+        $('.edit-appoint').hide();
+        $('.edit-schadule').show();
+        $('.show-upload-div').hide();
+        $('.profile-div').hide();
+    })
+})
+
+$(document).ready(function(){
+    $('#lin3').click(function(){
+        $('.edit-profile').hide();
+        $('.edit-schadule').hide();
+        $('.edit-appoint').show();
+        $('.show-upload-div').hide();
+        $('.profile-div').hide();
+    })
+})
+$(document).ready(function(){
+    $('#lin4').click(function(){
+        $('.edit-profile').hide();
+        $('.edit-schadule').hide();
+        $('.edit-appoint').hide();
+        $('.show-upload-div').show();
+        $('.profile-div').hide();
+    })
+})

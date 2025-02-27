@@ -1,0 +1,139 @@
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #124562;
+}
+
+:root {
+    --colorstand: #124562;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--colorstand);
+    font-weight: bold;
+}
+
+.main-content {
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.schedule {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.day {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.day h2 {
+    color: #007BFF;
+    text-align: center;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.day ul {
+    list-style: none;
+    padding: 0;
+}
+
+.day ul li {
+    background-color: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .day {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .day {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+/*  */
+.book-sched{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.book-sched .book-sched-btn{
+    background-color:#124562;
+    color: white;
+    font-weight: bold;
+    padding: 5px 70px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+}

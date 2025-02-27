@@ -1,0 +1,32 @@
+:root{
+    --colorstand: #124562;
+}
+body{
+    font-family: 'Roboto';
+    color: var(--colorstand);
+}
+.section-login{
+   margin-top: 60px;
+}
+.login-div-right{
+    padding-top: 100px;
+    padding-left: 100px;
+}
+/* .login-pic {
+    width: 100%;
+} */
+input[type="text"], input[type="password"],.form-check-input{
+    border: solid 2px var(--colorstand) !important;
+}
+@media (max-width:990px) {
+    .login-pic{
+        display: flex !important;
+        justify-content: center !important;
+    }
+    
+}
+button{
+    background-color: var(--colorstand) !important;
+    color: white !important;
+}
+

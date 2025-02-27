@@ -1,0 +1,374 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <script src="css/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/about.css' %}">
+    <style>
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light ">
+        <div class="container">
+            <!-- Logo on the left -->
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'imgs/logo.png'%}" alt="" class="img-fluid" width="32%">
+            </a>
+
+            <!-- Toggler button for small screens -->
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+            data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+            <!-- Navigation links on the right -->
+            <div class="collapse navbar-collapse justify-content-end " id="collapsibleNavId">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'index' %}" aria-current="page">
+                            <!-- active -->
+                            Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'ourTeam' %}">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactUs' %}">Contact Us</a>
+                    </li>
+                    {%if user.is_authenticated%}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {%else%}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+                    {%endif%}
+                    <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end nav -->
+
+
+
+
+    <main>
+
+        <!-- section about -->
+        <section class="about-section">
+            <div class="mt-5 about">
+                <div class="into-about d-flex justify-content-center align-content-center align-items-center">
+                    <div>
+                        <h1>ABOUT US</h1>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- end section-about -->
+
+        <!-- ======================== -->
+        <!-- welcome health care -->
+        <section class="welcome-section">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 p-3">
+                        <span class="fw-bolder d-block">Welcome to Healthcare</span>
+                        <h1 class="fw-bolder mt-4">
+                            Best Care For <br> Your Good Health
+                        </h1>
+                        <p class="mt-3 pe-5">Esteem spirit temper too say adieus who direct esteem. It esteems luckily
+                            or picture <br> placing drawing.</p>
+
+                        <li><i class="fa-solid fa-circle-check"></i> &nbsp; &nbsp;
+                            Apartments frequently or motionless.
+                        </li>
+
+                        <li><i class="fa-solid fa-circle-check"></i> &nbsp; &nbsp;
+                            Voluptatem quia voluptas sit aspernatur.
+                        </li>
+
+                        <div>
+                           <a href="{% url 'book1' %}"> <button class="mt-5 btn p-2 ps-4 pe-4 text-white fw-bold  button-book" style="margin-top: 80px !important;">Book</button></a>
+                        </div>
+
+                    </div>
+                    <!-- col -->
+                    <div class="col-lg-6 col-md-12 p-3 ps-5">
+                        <img src="{% static 'imgs/doc-pat.png'%}" alt="" width="90%">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- end section-welcome -->
+        <!-- =================== -->
+
+        <!-- section connection-about -->
+        <section class="connection-section">
+            <div class="outer-con">
+
+
+                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators custom-indicators ">
+                        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
+                            aria-label="First slide"></li>
+                        <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+                        <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+
+                            <div style=" display: flex; justify-content: center;">
+                                <div class="d" style="width: 450px;">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="{% static 'imgs/colon.png'%}" alt="" width="50px">
+                                    </div>
+                                    <p class="div-con-carosel mt-5">
+                                        An About Us page is your chance to build trust with prospective patients by
+                                        anticipating and addressing their concerns. It allows patients to form a
+                                        personal
+                                        connection with you
+
+                                    </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!--  -->
+                        <div class="carousel-item">
+
+                            <div style=" display: flex; justify-content: center;">
+                                <div class="d" style="width: 450px;">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="{% static 'imgs/colon.png' %}" alt="" width="50px">
+                                    </div>
+                                    <p class="div-con-carosel mt-5">
+                                        An About Us page is your chance to build trust with prospective patients by
+                                        anticipating and addressing their concerns. It allows patients to form a
+                                        personal
+                                        connection with you
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item">
+                            <!-- <img src="holder.js/900x500/auto/#666:#444/text:Third slide" class="w-100 d-block"
+                                alt="Third slide" /> -->
+
+                            <div style=" display: flex; justify-content: center;">
+                                <div class="d" style="width: 450px;">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="{% static 'imgs/colon.png'%}" alt="" width="50px">
+                                    </div>
+                                    <p class="div-con-carosel mt-5">
+                                        An About Us page is your chance to build trust with prospective patients by
+                                        anticipating and addressing their concerns. It allows patients to form a
+                                        personal
+                                        connection with you
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <!-- end section connection-about -->
+
+
+        <!-- section-45-years  -->
+        <section class="section-45-years mt-5 container">
+
+            <div class="row mb-5">
+                <div class="col-lg-6 col-md-12 p-3 d-flex justify-content-center pt-5">
+                    <div class="outer-45 p-4">
+                        <img src="{% static 'imgs/blogging-guide-vnPSzar9Tng-unsplash.jpg' %}" class="imgg" alt="">
+
+                        <p class="p-45-years p-2">
+                            With over 45 years of experience in the field of dentistry, Drs brings a wealth of knowledge
+                            and expertise to every patient interaction.
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 p-3 justify-content-center pt-5">
+                    <div class="outer-45 p-4">
+                        <img src="{% static 'imgs/kenny-eliason-y8fWicGsv4g-unsplash.jpg'%}" class="imgg" alt="">
+                        <p class="p-45-years p-2">
+
+                            We foster a warm and welcoming environment ensuring that each patient feels at ease
+                            throughout their visit.
+
+                        </p>
+
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row 1-->
+
+
+            <div class="row">
+                <div class="col-lg-6 col-md-12 p-3 d-flex justify-content-center pt-5">
+                    <div class="outer-45 p-4">
+                        <img src="{% static 'imgs/teeth.jpg'%}" class="imgg border border-3" alt="" style="width: 200px;">
+
+                        <p class="p-45-years p-2">
+                            We take the time to listen attentively, conduct thorough assessments, and develop personalized treatment plans to each individual.
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 p-3 justify-content-center pt-5">
+                    <div class="outer-45 p-4">
+                        <img src="{% static 'imgs/kamal-hoseinianzade-SjybLeQF6QY-unsplash.jpg'%}" class="imgg" alt="" >
+                        <p class="p-45-years p-2">
+
+                            Dr. Ahmed remains at the forefront of dental advancements, continuously updating their knowledge
+
+                        </p>
+
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row 2-->
+
+
+        </section>
+        <!-- end section-45-years  -->
+
+<!-- ========================== -->
+
+<!--  -->
+
+
+        <section class="mapp mt-5">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54477.9243032329!2d31.763607144297435!3d31.41770020991767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f9e55ffce10e15%3A0x99ae0f78405c14d2!2sDamietta%2C%20Qism%20Damietta%2C%20Damietta%20Desert%2C%20Damietta%20Governorate!5e0!3m2!1sen!2seg!4v1715734671023!5m2!1sen!2seg"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <!-- end section map -->
+
+
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 pt-4">
+                    <h6>Navioation</h6>
+                    <li class="text-white-50">Home</li>
+                    <li class="text-white-50">About us</li>
+                    <li class="text-white-50">Services</li>
+                    <li class="text-white-50">Our Team</li>
+                </div>
+                <div class="col-lg-3 col-md-6 pt-4">
+                    <h6>Services</h6>
+                    <li class="text-white-50">Periodontal Surgery</li>
+                    <li class="text-white-50">Payment note</li>
+                    <li class="text-white-50">Orthodontic</li>
+                    <li class="text-white-50">Contact Us</li>
+
+                </div>
+                <div class="col-lg-3 col-md-6 pt-4">
+                    <h6>Contact Us</h6>
+                    <li class="text-white-50">Demaiye 61 street</li>
+                    <li class="text-white-50">Clinic@gmail.com</li>
+                    <!-- <li class="text-white-50">Orthodontic</li>
+                <li class="text-white-50">Contact Us</li> -->
+
+                </div>
+                <div class="col-lg-3 col-md-12 pt-4">
+                    <h2 class="fw-bold" style="font-family: 'Courier New', Courier, monospace;">White Teeth</h2>
+                    <div class="mt-5">
+                        <i class="fa-brands fa-square-facebook me-4 ms-4"></i>
+                        <i class="fa-brands fa-twitter me-4"></i>
+                        <i class="fa-brands fa-youtube me-4"></i>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- end footer -->
+
+     <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

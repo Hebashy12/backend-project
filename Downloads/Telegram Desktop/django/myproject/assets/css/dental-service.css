@@ -1,0 +1,55 @@
+:root{
+    --colorstand: #124562 ;
+}
+body{
+    font-family: 'Roboto'; color: var(--colorstand);
+}
+
+.service-cover-dental{
+    margin-top: 10px !important;
+    background-image: url('../imgs/our-serv.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    max-height: 400px;
+
+
+}
+.into-service-cover-dental{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,.6);
+}
+
+/*  */
+.Who li{
+font-size: 20px;
+margin-bottom: 20px;
+}
+
+/*  */
+.section-dental-gallery2{
+    margin-top: 150px !important;
+}
+.section-dental-gallery2 .dental-gallery2 h1{
+  
+    color: var(--colorstand);
+    font-weight: bold;
+}
+
+.section-dental-gallery2 .dental-gallery2 p{
+    color: var(--colorstand);
+    font-size: 20px;
+
+}
+
+.section-dental-gallery2 .gallery2 .col-lg-6{
+    max-height: 450px;
+    /* border: solid 2px; */
+}
+.section-dental-gallery2 .gallery2 .col-lg-6 img{
+    width: 100%;
+    border-radius: 10px;
+}
+/*  */
